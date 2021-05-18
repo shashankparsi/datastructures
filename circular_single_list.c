@@ -186,6 +186,28 @@ count++;
 printf("number of elements are: %d\n",count);
 }
 
+int search_elements(struct node *tail,int element)
+{
+int index=0; // node starts with index 0
+struct node *tmp;
+//tmp=tail->next;
+
+if(tail==NULL)
+{
+return -2;
+}
+tmp=tail->next;
+do
+{
+if(tmp->data==element)
+{
+return index;
+}
+tmp=tmp->next;
+index++;
+} while(tmp!=tail->next);
+return -1;
+}
 
 int main()
 {
@@ -227,6 +249,11 @@ tail=delinter(tail,pos);
 printf("elements after del the node %d are \n:",pos);
 print(tail);
 count_elements(tail);
+int ele;
+printf("enter the element to be searched:");
+scanf("%d",&ele);
+int index=search_elements(tail,ele);
+printf("element  %d found at node: %d\n",ele,index);
 return 0;
 }
 
