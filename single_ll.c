@@ -115,8 +115,6 @@ ptr->data^=ptr1->data^=ptr->data^=ptr1->data;
 }
 ptr1=ptr1->link;
 ptr=ptr->link;
-printf("%d",ptr->data);
-ptr=ptr->link;
 }
 }
 
