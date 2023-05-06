@@ -24,7 +24,7 @@ front=front+1;
 void dequeue()
 {
 int del;
-if(front==-1)
+if(front==-1 || front > rear)
 {
 printf("queue is empty\n");
 }
@@ -37,7 +37,9 @@ if(front==rear)
 front=-1;
 rear=-1;
 }
-front=front+1;
+else {
+	front=front+1;
+}
 }
 }
 
